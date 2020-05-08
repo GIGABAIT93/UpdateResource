@@ -27,6 +27,7 @@ if ! [ -d .pl_version ]; then
 	    	else
 	    		echo '# Чтоб отключить сохранение бекап плагинов замените "true" на "false"' >> start_config.yml
 	    		echo "old_plugins: true" >> start_config.yml
+	    		echo '# Чтоб включить автообновления нужного плагина замените "false" на "true"' >> start_config.yml
 	    	fi
 	    	if grep "$pl" start_config.yml > /dev/null 2>&1 
 	    	then
@@ -57,6 +58,7 @@ else
 	    	else
 	    		echo '# Чтоб отключить сохранение бекап плагинов замените "true" на "false"' >> start_config.yml
 	    		echo "old_plugins: true" >> start_config.yml
+	    		echo '# Чтоб включить автообновления нужного плагина замените "false" на "true"' >> start_config.yml
 	    	fi
 	    	if grep "$pl" start_config.yml > /dev/null 2>&1
 	    	then 
