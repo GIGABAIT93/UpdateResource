@@ -779,11 +779,11 @@ fi
 
 config_setup
 
-core=`grep core: start_config.yml`                                # core=${core:6}; core=${core//[[:space:]]/}
+core=`grep core: start_config.yml`                                
 core=`echo "$core" | tr '.' '_' | cut -c 7- | tr -s " " "_"`;
-autoupdate=`grep autoupdate: start_config.yml | cut -c 13-`;      #autoupdate=${autoupdate:12};
-del_logs=`grep del_logs: start_config.yml | cut -c 11-`;          #del_logs=${del_logs:10};
-algoritm=`grep algoritm: start_config.yml | cut -c 11-`;          #algoritm=${algoritm:10};
+autoupdate=`grep autoupdate: start_config.yml | cut -c 13-`;      
+del_logs=`grep del_logs: start_config.yml | cut -c 11-`;          
+algoritm=`grep algoritm: start_config.yml | cut -c 11-`;          
 
 
 start_server
