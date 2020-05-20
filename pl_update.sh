@@ -15,6 +15,7 @@ if ! [ -d .pl_version ]; then
 	    ID=`cat $myDir/.pl_version/$pl/version.yml | grep "id:" | cut -c 1-`
 	    sed -i s/"$ID"/"id: 0"/g  $myDir/.pl_version/$pl/version.yml > /dev/null 2>&1
 	    if ! [ -f start_config.yml ]; then
+	    	echo ' ' >> start_config.yml
 	    	echo '# Чтоб отключить сохранение бекап плагинов замените "true" на "false"' >> start_config.yml
 	    	echo "old_plugins: true" >> start_config.yml
 	    	echo '# Чтоб включить автообновления нужного плагина замените "false" на "true"' >> start_config.yml
@@ -25,6 +26,7 @@ if ! [ -d .pl_version ]; then
 	    	then
 	    		outputBlue "" > /dev/null 2>&1
 	    	else
+	    		echo ' ' >> start_config.yml
 	    		echo '# Чтоб отключить сохранение бекап плагинов замените "true" на "false"' >> start_config.yml
 	    		echo "old_plugins: true" >> start_config.yml
 	    		echo '# Чтоб включить автообновления нужного плагина замените "false" на "true"' >> start_config.yml
@@ -46,6 +48,7 @@ else
 	        sed -i s/"$ID"/"id: 0"/g  $myDir/.pl_version/$pl/version.yml > /dev/null 2>&1
     	fi
 	    if ! [ -f start_config.yml ]; then
+	    	echo ' ' >> start_config.yml
 	    	echo '# Чтоб отключить сохранение бекап плагинов замените "true" на "false"' >> start_config.yml
 	    	echo "old_plugins: true" >> start_config.yml
 	    	echo '# Чтоб включить автообновления нужного плагина замените "false" на "true"' >> start_config.yml
@@ -56,6 +59,7 @@ else
 	    	then
 	    		outputBlue "" > /dev/null 2>&1
 	    	else
+	    		echo ' ' >> start_config.yml
 	    		echo '# Чтоб отключить сохранение бекап плагинов замените "true" на "false"' >> start_config.yml
 	    		echo "old_plugins: true" >> start_config.yml
 	    		echo '# Чтоб включить автообновления нужного плагина замените "false" на "true"' >> start_config.yml
