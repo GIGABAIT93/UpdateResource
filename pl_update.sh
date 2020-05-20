@@ -102,3 +102,15 @@ for pl in $PLUGINS; do
 		fi		
 	fi
 done
+
+cd $myDir
+pl_num=`grep -n '# Чтоб включить автообновления нужного плагина замените "false" на "true"' start_config.yml | sed s/[^0-9]//g`
+pl_num=$(( $pl_num + 1 ))
+cat start_config.yml | sed -n "$pl_num",1000p | sort > .sort.yml
+sed -i ""$pl_num",10000d" start_config.yml
+str=`wc -l .sort.yml | sed s/[^0-9]//g`
+for (( i=1; i <= "$str"; i++ )); do
+	pl_num=`cat .sort.yml | sed -n "$i","$i"p`
+	echo "$pl_num" >> start_config.yml
+done
+rm .sort.yml
