@@ -1,6 +1,6 @@
 # Внимание этот плагин не нуждается в ручном обновлении
 # Он автоматически обновляется с сайта: https://ci.codemc.io/
-id: 6
+id: 7
 name: FastAsyncWorldEdit
-build: 224
+build: 225
 Источник: Jenkins
